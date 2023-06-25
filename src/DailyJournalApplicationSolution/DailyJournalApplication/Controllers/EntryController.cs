@@ -1,31 +1,56 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using System.Collections.Generic;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using DailyJournalApplication.DAL.Abstract;
+using DailyJournalApplication.Models;
 
 namespace DailyJournalApplication.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class EntryController : Controller
+    public class EntryController : ControllerBase
     {
-        // GET: EntryController/Details/5
-        public ActionResult Index(int id)
+        private readonly IEntryRepository _entryRepository;
+
+        public EntryController(IEntryRepository entryRepository)
         {
-            return View();
+            _entryRepository = entryRepository;
         }
 
-        // POST: EntryController/Create
-        [HttpPost("entry")]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        // GET: api/Entry
+        [HttpGet("Entries")]
+        public ActionResult<IEnumerable<Entry>> GetAllEntries()
         {
-            try
+            List<Entry> entries = _entryRepository.GetAllEntries();
+            return Ok(entries);
+        }
+
+        // POST: api/Entry
+        [HttpPost("Entry")]
+        public ActionResult<Entry> CreateEntry([FromBody] Entry entry)
+        {
+            if (entry == null)
             {
-                return RedirectToAction(nameof(Index));
+                return BadRequest();
             }
-            catch
+
+            _entryRepository.AddOrUpdateEntry(entry);
+
+            return CreatedAtAction(nameof(GetEntryById), new { id = entry.Id }, entry);
+        }
+
+        // GET: api/Entry/5
+        [HttpGet("{id}")]
+        public ActionResult<Entry> GetEntryById(int id)
+        {
+            Entry entry = _entryRepository.GetEntryById(id);
+
+            if (entry == null)
             {
-                return View();
+                return NotFound();
             }
+
+            return Ok(entry);
         }
     }
 }
