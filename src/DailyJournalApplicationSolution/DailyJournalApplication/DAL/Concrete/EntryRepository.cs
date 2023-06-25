@@ -22,5 +22,11 @@ namespace DailyJournalApplication.DAL.Concrete
 
             return entries;
         }
+
+        public Entry GetEntryById (int id)
+        {
+            Entry entry = _dbSet.FirstOrDefault(e => e.Id == id);
+            return entry;
+        }
     }
 }

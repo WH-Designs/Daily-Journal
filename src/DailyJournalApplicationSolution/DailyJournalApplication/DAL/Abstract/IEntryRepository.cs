@@ -6,5 +6,6 @@ namespace DailyJournalApplication.DAL.Abstract
     {
         List<Entry> GetAllEntries();
         void AddOrUpdateEntry(Entry entry);
+        Entry GetEntryById(int id);
     }
 }
