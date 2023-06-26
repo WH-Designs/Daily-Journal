@@ -7,7 +7,7 @@ import { Entry } from './entry';
   providedIn: 'root'
 })
 export class EntryService {
-  private apiUrl = 'api/Entry';
+  private apiUrl = 'api/entry';
 
   constructor(private httpClient: HttpClient) { }
 
