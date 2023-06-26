@@ -2,6 +2,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using System.Runtime.Serialization;
 using DailyJournalApplication.Models;
+using DailyJournalApplication.DAL.Abstract;
+using DailyJournalApplication.DAL.Concrete;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +14,8 @@ var connectionString = builder.Configuration.GetConnectionString("DJConnection")
 builder.Services.AddDbContext<DJDbContext>(options => options
                             .UseLazyLoadingProxies()    // Will use lazy loading, but not in LINQPad as it doesn't run Program.cs
                             .UseSqlServer(connectionString));
+builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+builder.Services.AddScoped<IEntryRepository, EntryRepository>();
 
 builder.Services.AddSwaggerGen();
 

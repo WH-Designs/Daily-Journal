@@ -6,8 +6,8 @@ using DailyJournalApplication.Models;
 
 namespace DailyJournalApplication.Controllers
 {
-    [Route("api/entry")]
     [ApiController]
+    [Route("[controller]")]
     public class EntryController : ControllerBase
     {
         private readonly IEntryRepository _entryRepository;
