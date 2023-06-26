@@ -6,7 +6,7 @@ using DailyJournalApplication.Models;
 
 namespace DailyJournalApplication.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/entry")]
     [ApiController]
     public class EntryController : ControllerBase
     {
@@ -18,7 +18,7 @@ namespace DailyJournalApplication.Controllers
         }
 
         // GET: api/Entry
-        [HttpGet("Entries")]
+        [HttpGet]
         public ActionResult<IEnumerable<Entry>> GetAllEntries()
         {
             List<Entry> entries = _entryRepository.GetAllEntries();
@@ -26,7 +26,7 @@ namespace DailyJournalApplication.Controllers
         }
 
         // POST: api/Entry
-        [HttpPost("Entry")]
+        [HttpPost]
         public ActionResult<Entry> CreateEntry([FromBody] Entry entry)
         {
             if (entry == null)

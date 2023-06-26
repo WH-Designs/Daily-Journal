@@ -25,6 +25,7 @@ export class EntryComponent {
 
   onSubmit(): void {
     const entry: Entry = this.newEntryForm.value;
+    console.log(entry.date);
     this.newEntry = this.entryService.createEntry(entry);
 
     this.newEntry.subscribe(() => {
