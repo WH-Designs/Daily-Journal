@@ -1,3 +1,34 @@
-<div> <!-- New Journal Entry Form -->
-
+<div class="container">
+  <h1>Create New Entry</h1>
+  <form [formGroup]="newEntryForm" (ngSubmit)="onSubmit()" class="my-4">
+    <div class="mb-3">
+      <label for="date" class="form-label">Date</label>
+      <input type="date" id="date" formControlName="date" class="form-control" placeholder="Enter date" required>
+    </div>
+    <div class="mb-3">
+      <label for="mood" class="form-label">Mood</label>
+      <input type="text" id="mood" formControlName="mood" class="form-control" placeholder="Enter mood" required>
+    </div>
+    <div class="mb-3">
+      <label for="affirmation" class="form-label">Affirmation</label>
+      <input type="text" id="affirmation" formControlName="affirmation" class="form-control" placeholder="Enter affirmation" required>
+    </div>
+    <div class="mb-3">
+      <label for="achievement" class="form-label">Achievement</label>
+      <input type="text" id="achievement" formControlName="achievement" class="form-control" placeholder="Enter achievement" required>
+    </div>
+    <div class="mb-3">
+      <label for="nonAchievement" class="form-label">Non-Achievement</label>
+      <input type="text" id="nonAchievement" formControlName="nonAchievement" class="form-control" placeholder="Enter non-achievement" required>
+    </div>
+    <div class="mb-3">
+      <label for="tomorrowsGoal" class="form-label">Tomorrow's Goal</label>
+      <input type="text" id="tomorrowsGoal" formControlName="tomorrowsGoal" class="form-control" placeholder="Enter tomorrow's goal" required>
+    </div>
+    <div class="mb-3">
+      <label for="rating" class="form-label">Rating</label>
+      <input type="number" id="rating" formControlName="rating" class="form-control" placeholder="Enter rating" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
 </div>
