@@ -10,6 +10,7 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { EntryComponent } from './entry/entry.component';
 import { FooterComponent } from './footer/footer.component';
+import { EntriesListComponent } from './entries-list/entries-list.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FooterComponent } from './footer/footer.component';
     NavMenuComponent,
     HomeComponent,
     EntryComponent,
-    FooterComponent
+    FooterComponent,
+    EntriesListComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -27,6 +29,7 @@ import { FooterComponent } from './footer/footer.component';
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'entry', component: EntryComponent },
+      { path: 'entries', component: EntriesListComponent },
     ])
   ],
   providers: [],
