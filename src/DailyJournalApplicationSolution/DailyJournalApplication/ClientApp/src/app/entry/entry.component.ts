@@ -21,7 +21,6 @@ export class EntryComponent {
       tomorrowsGoal: '',
       rating: 0,
     });
-  
 
   onSubmit(): void {
     const entry: Entry = this.newEntryForm.value;
@@ -29,27 +28,7 @@ export class EntryComponent {
     this.newEntry = this.entryService.createEntry(entry);
 
     this.newEntry.subscribe(() => {
-      window.alert(`Your Entry titled ${entry.achievement} has been inputted into your journal.`);
+      window.alert(`Your Entry for this date ${entry.date} has been inputted into your journal.`);
     });
   }
-  //constructor(private entryService: EntryService, private formBuilder: FormBuilder) { }
-
-  //newEntry: Observable<Entry> | undefined;
-
-  //newEntryForm = this.formBuilder.group({
-  //  date: '',
-  //  mood: '',
-  //  affirmation: '',
-  //  achievement: '',
-  //  nonAchievement: '',
-  //  tomorrowsGoal: '',
-  //  rating: 0,
-  //});
-
-  //onSubmit(): void {
-  //  this.newEntry = this.entryService.createEntry(new Entry(this.newEntryForm.value.date, this.newEntryForm.value.mood, this.newEntryForm.value.affirmation,
-  //    this.newEntryForm.value.achievement, this.newEntryForm.value.nonAchievement, this.newEntryForm.value.tomorrowsGoal, this.newEntryForm.value.rating));
-
-  //  window.alert(`Your Entry titled ${this.newEntry} has been inputed into your journal.`);
-  //}
 }

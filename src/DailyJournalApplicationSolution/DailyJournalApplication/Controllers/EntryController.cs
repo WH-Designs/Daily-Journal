@@ -6,8 +6,8 @@ using DailyJournalApplication.Models;
 
 namespace DailyJournalApplication.Controllers
 {
-    [Route("api/entry")]
     [ApiController]
+    [Route("[controller]")]
     public class EntryController : ControllerBase
     {
         private readonly IEntryRepository _entryRepository;
@@ -34,7 +34,11 @@ namespace DailyJournalApplication.Controllers
                 return BadRequest();
             }
 
+            
+
             _entryRepository.AddOrUpdateEntry(entry);
+
+            
 
             return CreatedAtAction(nameof(GetEntryById), new { id = entry.Id }, entry);
         }
