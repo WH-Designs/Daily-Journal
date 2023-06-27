@@ -34,7 +34,11 @@ namespace DailyJournalApplication.Controllers
                 return BadRequest();
             }
 
+            
+
             _entryRepository.AddOrUpdateEntry(entry);
+
+            
 
             return CreatedAtAction(nameof(GetEntryById), new { id = entry.Id }, entry);
         }

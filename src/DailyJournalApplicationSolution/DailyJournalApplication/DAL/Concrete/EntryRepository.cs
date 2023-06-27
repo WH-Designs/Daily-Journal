@@ -6,14 +6,17 @@ namespace DailyJournalApplication.DAL.Concrete
 {
     public class EntryRepository : Repository<Entry>, IEntryRepository
     {
+        private DJDbContext _dbContext;
+
         public EntryRepository(DJDbContext ctx) : base(ctx) 
         { 
-        
+            _dbContext = ctx;
         }
 
         public void AddOrUpdateEntry(Entry entry)
         {
-            _dbSet.Update(entry);
+            _dbContext.Add(entry);
+            _dbContext.SaveChanges();
         }
 
         public List<Entry> GetAllEntries()
