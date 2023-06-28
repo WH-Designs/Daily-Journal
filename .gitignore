@@ -574,3 +574,7 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+*.pack
+/src/DailyJournalApplicationSolution/DailyJournalApplication/ClientApp/.angular/cache/15.2.5/angular-webpack/ebb578b74565c48f46a25f7457f90c7f374dfe14/index.pack
+*.old
+/src/DailyJournalApplicationSolution/DailyJournalApplication/ClientApp/.angular/cache/15.2.5/angular-webpack/ebb578b74565c48f46a25f7457f90c7f374dfe14/0.pack
