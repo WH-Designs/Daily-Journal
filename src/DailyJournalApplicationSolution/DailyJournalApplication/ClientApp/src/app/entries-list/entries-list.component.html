@@ -1,5 +1,21 @@
-<h1>All Entries</h1>
-
-<div *ngFor="let entry of entries">
-    <h1>{{ entry.date }}</h1>
+<h1 class="display-2">All Entries</h1>
+<div class="d-flex justify-content-center" *ngFor="let entry of entries">
+  <div class="card w-75 mb-2">
+    <div class="card-body text-dark">
+      <h3 class="card-title display-5 text-center">{{ entry.date }}</h3>
+      <h4 class="card-subtitle mb-2 text-muted display-6"><strong>Rating: </strong>{{ entry.rating }}</h4>
+      <p class="card-text display-5"><strong>Mood: </strong>
+        <br />
+        {{ entry.mood }}</p>
+      <hr />
+            <p class="display-5">"<em>{{ entry.affirmation }}</em>"</p>
+            <p class="display-6"><strong>What you Achieved:</strong> <br />
+               {{ entry.achievement }}</p>
+            <p class="display-6"><strong>What you didn't Achieve:</strong> <br />
+               {{ entry.nonAchievement }}</p>
+            <hr />
+            <p class="display-6"><strong>Tomorrows Goal:</strong> <br />
+            {{ entry.tomorrowsGoal }}</p>
+    </div>
+  </div>
 </div>
