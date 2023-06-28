@@ -16,7 +16,7 @@
   - [Design Principles](#design-principles)
 
 ## Overview
-This application is my first application using angular and I am making this application because I felt I needed a better tool to use to track my
+This application is my first application using angular, I started learning typescript and angular Wednesday 21st and finished this project on Tuesday 27th and I made this application because I felt I needed a better tool to use to track my
 day to day life and all of the events and things that happen during it so that I can practice and be more self aware and be able to learn and grow more as a person.
 ### Screenshot
 
