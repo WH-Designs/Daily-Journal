@@ -20,7 +20,9 @@ This application is my first application using angular and I am making this appl
 day to day life and all of the events and things that happen during it so that I can practice and be more self aware and be able to learn and grow more as a person.
 ### Screenshot
 
-![Final Solution]()
+![Final Solution](/assets/images/Main%20Page%20Screenshot.png)
+![Final Solution](/assets/images/Create%20An%20Entry%20Page%20Screenshot.png)
+![Final Solution](/assets/images/Entries%20Page%20Screenshot.png)
 
 ### Links
 
