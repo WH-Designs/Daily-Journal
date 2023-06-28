@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Entry } from '../../entry';
+import { Observable } from 'rxjs';
+import { EntryService } from '../../entryservice.service';
 
 @Component({
   selector: 'app-entries-list',
@@ -6,5 +9,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./entries-list.component.css']
 })
 export class EntriesListComponent {
+  constructor(private entryService: EntryService) { }
 
+  entries: Entry[] | undefined;
+
+  ngOnInit() {
+    this.entries = this.entryService.getAllEntries();
+  }
 }
